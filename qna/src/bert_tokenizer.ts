@@ -257,7 +257,7 @@ export class BertTokenizer {
           const substr = chars.slice(start, end).join('');
 
           const match = this.trie.find(substr);
-          if (match != null && match.end != null) {
+          if (match != null && match.end) {
             currIndex = match.getWord()[2];
             break;
           }
