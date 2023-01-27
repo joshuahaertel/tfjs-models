@@ -111,11 +111,11 @@ function isInvalid(ch: string): boolean {
   return (ch.charCodeAt(0) === 0 || ch.charCodeAt(0) === 0xfffd);
 }
 
-const punctuations = '[~`!@#$%^&*(){}[];:"\'<,.>?/\\|-_+=';
+const punctuationsRegex = /\p{P}/u;
 
 /** To judge whether it's a punctuation. */
 function isPunctuation(ch: string): boolean {
-  return punctuations.indexOf(ch) !== -1;
+  return punctuationsRegex.test(ch);
 }
 
 export interface Token {
